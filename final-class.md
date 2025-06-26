@@ -77,7 +77,7 @@ public boolean buttonDown(Controller controller, int buttonCode) {
 
 ## Android Scaling
 
-Discuss [Viewports](https://libgdx.com/wiki/graphics/viewports)
+Discuss [Viewports](https://libgdx.com/wiki/graphics/viewports) see <https://raeleus.github.io/viewports-sample-project/>
 
 In BaseScreen class, replace mainStage and uiStage instantiation lines with:
 
