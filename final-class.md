@@ -96,9 +96,9 @@ uiStage.getViewport().update(width, height, true);
 In BaseScreen.render(), replace:
 
 ```java
-mainStage.getViewport().apply();
+mainStage.getViewport().apply(); // even though we have two stages, we need to re-apply the viewport before drawing to it each render
 mainStage.draw();
-uiStage.getViewport().apply();
+uiStage.getViewport().apply(); // even though we have two stages, we need to re-apply the viewport before drawing to it each render
 uiStage.draw();
 ```
 
