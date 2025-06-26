@@ -19,7 +19,8 @@ chapter 13 discusses controllers and touchpads
    7. In disconnected() method: `if (this.controller == controller) this.controller = null;`
 2. LevelScreen
    1. In update() method: `if (controller != null) { updateMovementFromController(); }`
-   2. Add code for updateMovementFromController()
+   2. Add code for updateMovementFromController() below
+   3. Optionally, implement buttonDown() or buttonUp(), or axisMoved()
 
 ```java
 private void updateMovementFromController() {
@@ -39,11 +40,7 @@ private void updateMovementFromController() {
          turtle.setAcceleration(0); // No input, no acceleration
      }
 }
-```
 
-   4. Optionally, implement buttonDown() or buttonUp(), or axisMoved()
-
-```java
 @Override
 public boolean buttonDown(Controller controller, int buttonCode) {
      // treat the B button as restart
