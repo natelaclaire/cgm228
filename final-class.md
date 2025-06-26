@@ -1,13 +1,13 @@
 # Final Class
 
+chapter 9 has drag and drop, chapter 10 has tile maps, chapter 13 discusses controllers and touchpads, chapter 16 has 3D graphics
+
 ## Gradle Sync
 
 Ctrl-Shift-O or button next to Search Everywhere at top of screen
 May need to go to Gradle pane and click link to turn on experimental settings, always build all gradle tasks during sync
 
 ## Controllers
-
-chapter 13 discusses controllers and touchpads
 
 1. BaseScreen
    1. Implements ControllerListener
