@@ -12,17 +12,71 @@ chapter 13 discusses controllers and touchpads
 1. BaseScreen
    1. Implements ControllerListener
    2. Override ControllerListener methods
-   3. Add property: protected Controller controller
-   4. In show() method: Controllers.addListener(this); if (Controllers.getCurrent() != null) { controller = Controllers.getCurrent(); }
-   5. In hide() method: Controllers.removeListener(this); controller = null;
-   6. In connected() method: this.controller = controller;
-   7. In disconnected() method: if (this.controller == controller) this.controller = null;
+   3. Add property: `protected Controller controller;`
+   4. In show() method: `Controllers.addListener(this); if (Controllers.getCurrent() != null) { controller = Controllers.getCurrent(); }`
+   5. In hide() method: `Controllers.removeListener(this); controller = null;`
+   6. In connected() method: `this.controller = controller;`
+   7. In disconnected() method: `if (this.controller == controller) this.controller = null;`
 2. LevelScreen
-   1. In update() method: if (controller != null) { updateMovementFromController(); }
+   1. In update() method: `if (controller != null) { updateMovementFromController(); }`
    2. Add code for updateMovementFromController()
-   3. Optionally, implement buttonDown() or buttonUp(), or axisMoved()
+
+```java
+private void updateMovementFromController() {
+     float axisX = controller.getAxis(0);
+     float axisY = controller.getAxis(1);
+
+     // axisY is reversed on the controller
+     axisY = -axisY;
+
+     if (axisX > 0.5f || axisX < -0.5f || axisY > 0.5f || axisY < -0.5f) {
+         // Calculate angle in degrees (LibGDX uses 0 degrees = right, 90 = up)
+         float angle = (float) Math.toDegrees(Math.atan2(axisY, axisX));
+         if (angle < 0) angle += 360;
+         turtle.setAcceleration(400); // or whatever value you use
+         turtle.accelerateAtAngle(angle);
+     } else {
+         turtle.setAcceleration(0); // No input, no acceleration
+     }
+}
+```
+
+   4. Optionally, implement buttonDown() or buttonUp(), or axisMoved()
+
+```java
+@Override
+public boolean buttonDown(Controller controller, int buttonCode) {
+     // treat the B button as restart
+     if (buttonCode == controller.getMapping().buttonB) {
+         instrumental.dispose();
+         oceanSurf.dispose();
+
+         StarfishGame.setActiveScreen(new LevelScreen());
+         return true;
+     }
+
+     return false;
+}
+```
+
 3. MenuScreen
    1. Could implement buttonUp() to enable using controller to start game
+  
+```java
+@Override
+public boolean buttonDown(Controller controller, int buttonCode) {
+     // treat the B button as restart
+     if (buttonCode == controller.getMapping().buttonA) {
+         StarfishGame.setActiveScreen( new LevelScreen() );
+         return true;
+     } else if (buttonCode == controller.getMapping().buttonB) {
+         Gdx.app.exit();
+         return true;
+     }
+
+     return false;
+}
+```
 
 ## Android Scaling
 
@@ -35,7 +89,12 @@ mainStage = new Stage(new FillViewport(800, 600));
 uiStage = new Stage(new ExtendViewport(800, 600));
 ```
 
-Add code for BaseScreen.resize()
+Add code for BaseScreen.resize():
+
+```java
+mainStage.getViewport().update(width, height, true);
+uiStage.getViewport().update(width, height, true);
+```
 
 In BaseScreen.render(), replace:
 
