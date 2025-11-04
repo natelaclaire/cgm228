@@ -40,7 +40,7 @@ By completing this assignment, you will:
    * Review how the textures are loaded and managed.
    * Review how keypresses are handled.
 6. Create an Application run configuration as we did last time and run the game, using the arrow keys on the keyboard to move the turtle around the screen to collect starfish and reach the winning state.
-7. Switch to each of the other branches (`beta` and `gamma`) one at a time, repeating steps 4-6 for each version of the game.
+7. Switch to each of the other branches (`beta` and `gamma`) one at a time, exploring how the code differs and running the game to see if there are differences in behavior.
    * Alpha: Initial game with basic actor and stage setup.  
    * Beta: Refactored code with improved organization and a generic `GameActor` class that can be extended.  
    * Gamma: Includes game flow logic and basic collision detection.  
