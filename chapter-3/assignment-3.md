@@ -38,7 +38,7 @@ By completing this assignment, you will:
 4. Open the `starfish-collector` project in Android Studio.
 5. Explore the changes that were implemented throughout the chapter.
 6. Create an Application run configuration as we did last time and run the game, using the arrow keys on the keyboard to move the turtle around the screen to collect starfish and reach the winning state.
-7. Switch to the `epsilon` branch, explore how the code differs, and running the game to see the differences in behavior.
+7. Switch to the `epsilon` branch, explore how the code differs, and run the game to see the differences in behavior.
 
 #### **3\. Extend the Starfish Collector Game**
 
