@@ -44,19 +44,19 @@ By completing this assignment, you will:
 
 Using GitHub Desktop, switch to the `epsilon` branch. This is the most complete version of the game. Your task is to add two new features: random object placement and a second level that is more difficult than the first. Before you begin, create a new branch from `epsilon` named `feature/difficulty-scaling`.
 
-##### **2.1 Randomize Object Placements**
+##### **3.1 Randomize Object Placements**
 
 Randomize the placement of the starfish and rocks, ensuring that it's possible for some of them to be placed beyond the initial viewport.
 
-##### **2.2 Add a Second Level**
+##### **3.2 Add a Second Level**
 
 As described on page 81 of the textbook, add a second level that appears after the player collects all starfish and presses the C key, using the message-continue.png graphic between levels. Display the you-win.png file only if the player completes both levels. How you differentiate the levels is up to you, but you could consider having more sharks, more rocks, and/or more starfish in the second level. Another approach would be to have no shark for the first level and add the shark in the second level. Rock and starfish placements should be randomized for both levels.
 
-##### **2.3 Adjust Shark Behavior and Super Class**
+##### **3.3 Adjust Shark Behavior and Super Class**
 
 Speaking of sharks, you'll need to add your shark from the last assignment to the latest version of the project and modify your `Shark` class so that it extends the `BaseActor` class. Also consider: how will your shark(s) appear on the stage now that we have sand on all sides? Will they slide into the water from the beach (this is what happens if you don't change the logic)? Will they fade in from random locations in the water? You should probably ensure that they don't enter the scene too close to your turtle...
 
-#### **3\. Test Your Changes**
+#### **4\. Test Your Changes**
 
 1. Compile and run the modified game.  
 2. Use the following checklist to verify functionality:  
@@ -68,14 +68,14 @@ Speaking of sharks, you'll need to add your shark from the last assignment to th
    * The second level is more challenging than the first.
    * The "You Win" message displays after all starfish are collected in level 2.
 
-#### **4\. Commit and Push Your Changes**
+#### **5\. Commit and Push Your Changes**
 
 1. Use GitHub Desktop to commit your changes:  
    * Include modified files and new assets.  
    * Write a clear commit message (e.g., "Added second level and random placement to the Starfish Collector game").  
 2. Push your commits to your GitHub repository.
 
-#### **5\. Submit Your Assignment**
+#### **6\. Submit Your Assignment**
 
 1. Navigate to Brightspace and locate the Assignment 3 submission link.  
 2. Submit the URL to your GitHub repository.  
